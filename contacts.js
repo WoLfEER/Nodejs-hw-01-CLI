@@ -2,13 +2,13 @@ const path = require("path");
 const fs = require("fs/promises");
 
 const { v4: uuidv4 } = require("uuid");
-// uuidv4();
+
 
 const contactsPath = path.resolve("db/contacts.json");
 const updateContacts = async (contacts) =>
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
 
-// TODO: задокументировать каждую функцию
+
 const listContacts = async () => {
   const data = await fs.readFile(contactsPath);
   return JSON.parse(data);
